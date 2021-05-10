@@ -1,0 +1,25 @@
+# Parameters for Architecture:
+# ==============================================================================
+Architecture.dense_units = 570.1580573639504
+Architecture.dropout_rate = 0.8796949336129827
+Architecture.num_rnn_layers = 3.7476331322455376
+Architecture.rnn_block_type = 'bidirectional'
+Architecture.rnn_units = 238.14592979640753
+Architecture.window_size = 250
+
+# Parameters for load:
+# ==============================================================================
+load.data_dir = '/home/data/HAPT_dataset'
+
+# Parameters for Trainer:
+# ==============================================================================
+Trainer.ckpt_interval = 200
+Trainer.log_interval = 100
+Trainer.total_steps = 2000
+
+# Parameters for windowing:
+# ==============================================================================
+windowing.batch_size = 32
+windowing.shift = 125
+windowing.stride = 1
+windowing.window_size = 250

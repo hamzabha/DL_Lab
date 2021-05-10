@@ -1,0 +1,53 @@
+# Parameters for Architecture:
+# ==============================================================================
+Architecture.base_filters = 32
+Architecture.dense_units = 1024
+Architecture.dropout_rate = 0.2
+Architecture.model_type = @CNN_block
+Architecture.n_blocks = 3
+
+# Parameters for augment:
+# ==============================================================================
+augment.brightness = True
+augment.brightness_max_delta = 0.2
+augment.contrast = True
+augment.contrast_min_factor = 0.5
+augment.cropping_probability = 0.75
+augment.flip = True
+augment.hue = True
+augment.hue_max_delta = 0.075
+augment.max_cropping_size = 200
+augment.min_cropping_size = 200
+augment.rotate = True
+augment.saturation = True
+augment.saturation_min_factor = 0.5
+
+# Parameters for CNN_block:
+# ==============================================================================
+CNN_block.kernel_size = (3, 3)
+
+# Parameters for Hybrid:
+# ==============================================================================
+Hybrid.units = 32
+
+# Parameters for load:
+# ==============================================================================
+load.data_dir = '/home/data'
+load.name = 'idrid'
+load.val_split_idrid = 0.2
+
+# Parameters for prepare:
+# ==============================================================================
+prepare.batch_size = 32
+prepare.caching = 'disk'
+prepare.img_size = (256, 256)
+
+# Parameters for preprocess:
+# ==============================================================================
+preprocess.relevant_bbox = (0, 275, 2848, 3415)
+
+# Parameters for Trainer:
+# ==============================================================================
+Trainer.ckpt_interval = 15000.0
+Trainer.log_interval = 1000.0
+Trainer.total_steps = 30000.0

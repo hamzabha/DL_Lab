@@ -1,0 +1,20 @@
+# Architectures
+Architecture.rnn_block_type = 'bidirectional' # 'unidirectional' / 'bidirectional' / 'cascaded' / 'gru' / 'simpleRNN'
+Architecture.rnn_units = 64
+Architecture.num_rnn_layers = 2
+Architecture.dense_units = 128
+Architecture.dropout_rate = 0.2
+Architecture.window_size = 250
+
+# preprocessing
+windowing.batch_size = 32
+windowing.window_size = 250
+windowing.shift = 125
+windowing.stride = 1
+
+# Training
+Trainer.total_steps = 1000
+Trainer.log_interval = 50
+Trainer.ckpt_interval = 250
+
+load.data_dir = '/home/data/HAPT_dataset'
