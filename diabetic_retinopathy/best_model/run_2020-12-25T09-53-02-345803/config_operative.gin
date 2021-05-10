@@ -1,0 +1,53 @@
+# Parameters for Architecture:
+# ==============================================================================
+Architecture.base_filters = 58.26029617403805
+Architecture.dense_units = 244.51894626920253
+Architecture.dropout_rate = 0.6221260997191896
+Architecture.model_type = @CNN_block
+Architecture.n_blocks = 2.239037610731196
+
+# Parameters for augment:
+# ==============================================================================
+augment.brightness = True
+augment.brightness_max_delta = 0.43874939511221067
+augment.contrast = True
+augment.contrast_min_factor = 0.476341334213663
+augment.cropping_probability = 0.5036870336239339
+augment.flip = True
+augment.hue = True
+augment.hue_max_delta = 0.01654469551885307
+augment.max_cropping_size = 249.47778848535148
+augment.min_cropping_size = 170.97552598203671
+augment.rotate = True
+augment.saturation = True
+augment.saturation_min_factor = 0.9501724199912683
+
+# Parameters for CNN_block:
+# ==============================================================================
+CNN_block.kernel_size = (3, 3)
+
+# Parameters for Hybrid:
+# ==============================================================================
+Hybrid.units = 32
+
+# Parameters for load:
+# ==============================================================================
+load.data_dir = '/home/data'
+load.name = 'idrid'
+load.val_split_idrid = 0.2
+
+# Parameters for prepare:
+# ==============================================================================
+prepare.batch_size = 32
+prepare.caching = 'disk'
+prepare.img_size = (256, 256)
+
+# Parameters for preprocess:
+# ==============================================================================
+preprocess.relevant_bbox = (0, 275, 2848, 3415)
+
+# Parameters for Trainer:
+# ==============================================================================
+Trainer.ckpt_interval = 15000.0
+Trainer.log_interval = 1000.0
+Trainer.total_steps = 30000.0

@@ -1,0 +1,53 @@
+# Architectures
+Architecture.base_filters = 32
+Architecture.n_blocks = 3
+Architecture.dense_units = 1024
+Architecture.dropout_rate = 0.2
+Architecture.model_type = @CNN_block
+# example transfer learning model types:
+# 'https://tfhub.dev/google/imagenet/inception_v1/feature_vector/4'
+# 'https://tfhub.dev/tensorflow/efficientnet/b4/feature-vector/1'
+# 'https://tfhub.dev/google/imagenet/mobilenet_v2_100_224/feature_vector/4'
+
+# Layers
+
+CNN_block.kernel_size = (3, 3)
+Hybrid.units = 32
+
+# Training
+Trainer.total_steps = 3e4
+Trainer.log_interval = 1e3
+Trainer.ckpt_interval = 1.5e4
+
+# Input pipeline
+load.name = 'idrid'
+# This directory should contain a folder named 'tensorflow_datasets' containing datasets managed
+# by the tensorflow_datasets-module, and one folder for every other (manually handled) dataset
+load.data_dir = '/home/data'
+# Validation Split if IDRID is used. Otherwise, validation and training data is already separated.
+load.val_split_idrid = 0.2
+prepare.img_size = (256, 256)
+prepare.batch_size = 32
+prepare.caching = 'disk'   # in (False, 'disk', 'memory')
+# bounding box of relevant image content: (y_min, x_min, bbox_height, bbox_width)
+preprocess.relevant_bbox = (0, 275, 2848, 3415)
+
+# results in square crop (disable or modify code if rectangular aspect ratio with no distortion is desired)
+augment.min_cropping_size = 200
+augment.max_cropping_size = 200
+augment.cropping_probability = 0.75
+
+augment.flip = True
+augment.rotate = True
+
+augment.brightness = True
+augment.brightness_max_delta = 0.2 # in the interval [0, 1)
+
+augment.contrast = True
+augment.contrast_min_factor = 0.5 # in (0.0, 1.0), resulting in bounds (x, 1/x)
+
+augment.hue = True
+augment.hue_max_delta = 0.075 # in the interval [0, 0.5]
+
+augment.saturation = True
+augment.saturation_min_factor = 0.5 # in (0.0, 1.0), resulting in bounds (x, 1/x)
